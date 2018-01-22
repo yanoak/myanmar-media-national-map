@@ -210,7 +210,7 @@ body {
 }  
   
 .icon {
-  width: 50px;
+  width: 40px;
   padding-left: 20px;
   padding-right: 10px;
   padding-top: 5px;
@@ -670,6 +670,7 @@ d3.json("data/myanmar_sr.json", function(error2, mm_sr) {
       var dy = 0;
       if (d.place == "Sagaing") dx = -120;
       if (d.place == "Mawlamyine") dx = -170;
+      if (d.place == "Taunggyi") dx = -120;
       return "translate(" + [pos[0]+dx,pos[1]+dy] + ")"; 
     })
     .attr("dy", ".35em")
@@ -701,6 +702,7 @@ d3.json("data/myanmar_sr.json", function(error2, mm_sr) {
       var dy = 0;
       if (d.key == "Sagaing") dx = -120;
       if (d.key == "Mawlamyine") dx = -170;
+      if (d.key == "Taunggyi") dx = -120;
       return "translate(" + [pos[0]+dx,pos[1]+dy] + ")"; 
     })
     .attr("dy", ".35em")
@@ -800,13 +802,13 @@ function makeAnnotations(dataset) {
     
     switch (dataset[p].key) { 
       case "Sagaing":
-        dataset[p].textOffset = [100-dataset[p].cx, -700];
+        dataset[p].textOffset = [100-dataset[p].cx, -1000];
         break; 
       case "Monywa":
-        dataset[p].textOffset = [100-dataset[p].cx, -75];
+        dataset[p].textOffset = [100-dataset[p].cx, -275];
         break;  
       case "Magway":
-        dataset[p].textOffset = [500-dataset[p].cx, -400];
+        dataset[p].textOffset = [500-dataset[p].cx, -600];
         break;    
       case "Sittwe":
         dataset[p].textOffset = [100-dataset[p].cx, 150];
@@ -818,7 +820,7 @@ function makeAnnotations(dataset) {
         dataset[p].textOffset = [500-dataset[p].cx, 150];
         break;    
       case "Pathein":
-        dataset[p].textOffset = [900-dataset[p].cx, -150];
+        dataset[p].textOffset = [900-dataset[p].cx, -250];
         break;   
       case "Mawlamyine":
         dataset[p].textOffset = [1100-dataset[p].cx, 400];
@@ -833,25 +835,25 @@ function makeAnnotations(dataset) {
         dataset[p].textOffset = [2700-dataset[p].cx, 200];
         break;      
       case "Bago":
-        dataset[p].textOffset = [2700-dataset[p].cx, 250];
+        dataset[p].textOffset = [3100-dataset[p].cx, 250];
         break;   
       case "Hpa-An":
-        dataset[p].textOffset = [2700-dataset[p].cx, 600];
+        dataset[p].textOffset = [2700-dataset[p].cx, 400];
         break; 
       case "Myeik":
         dataset[p].textOffset = [2700-dataset[p].cx, 250];
         break; 
       case "Myitkyina":
-        dataset[p].textOffset = [3100-dataset[p].cx, -700];
+        dataset[p].textOffset = [3100-dataset[p].cx, -800];
         break;  
       case "Lashio":
         dataset[p].textOffset = [3100-dataset[p].cx, -600];
         break;    
       case "Kengtung":
-        dataset[p].textOffset = [3100-dataset[p].cx, -300];
+        dataset[p].textOffset = [3100-dataset[p].cx, -150];
         break;    
       case "Mandalay":
-        dataset[p].textOffset = [3100-dataset[p].cx, 200];
+        dataset[p].textOffset = [3100-dataset[p].cx, 300];
         break;
         
     }
